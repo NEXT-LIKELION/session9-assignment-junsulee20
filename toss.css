@@ -1,0 +1,162 @@
+
+.container {
+    background: #f2f4f6;
+    max-width: 390px;
+    width: 100%;
+    height: 100vh;  /* 화면 전체 높이를 차지 */
+    margin: 0 auto;
+    /* overflow: hidden; 넘치는 부분 숨기기 (필요시) */
+}
+
+
+.header, .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+    .header img:first-child {margin-right: auto; /* 첫 번째 이미지를 왼쪽으로 정렬 */}
+    .header img:second-child {margin-left: auto; /* 첫 번째 이미지를 왼쪽으로 정렬 */}
+    .header img:third-child {margin-left: auto; /* 첫 번째 이미지를 왼쪽으로 정렬 */}
+
+    .header { grid-area: header; background: #f2f4f6; margin-top: 0px;}
+    .footer {  background: white; margin-bottom: 0px;}
+
+
+/* 이미지 크기조정 */
+.size {
+    max-width: 13%;  
+    height: auto; /* 비율 유지 */
+}
+.header img {
+    width: 30%;   
+    height: auto; /* 비율 유지 */
+}
+.ad img {
+    width: 100%;   /* 이미지 너비를 부모 요소에 맞춤 */
+    height: auto;  /* 비율 유지 (가로폭에 맞춰 자동 조정) */
+    display: block; /* 이미지 아래 여백 제거 */
+}
+.money img {
+    width: 70%;   
+    height: auto; /* 비율 유지 */
+}
+.card img {
+    width: 70%;   
+    height: auto; /* 비율 유지 */
+}
+.footer img {
+    width: 40%;   
+    height: auto; /* 비율 유지 */
+}
+
+/* 텍스트  */
+.blue {
+font-size: 1.2rem;  /* 글자 크기 조정 */
+font-weight: bold;  /* 글자 굵게 */
+color : blue
+}
+.bold-text {
+font-size: 1.2rem;  /* 글자 크기 조정 */
+font-weight: bold;  /* 글자 굵게 */
+}
+
+/* 배치 */
+.container {
+display: grid;
+grid-template-rows: 1fr 2fr 6fr 2fr 1fr;
+grid-template-areas:
+"header"
+"ad"
+"money"
+"card"
+"footer";
+gap: 10px; /* 모든 그리드 아이템 간 간격 추가 */
+}
+
+    .money {
+    background: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "kakao"
+    "people"
+    "us"
+    "saving"
+    "stock"
+    "bar";
+    }
+
+        .kakao {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1.5fr;
+        grid-template-areas:
+        "kakao_1 kakao_2 kakao_3";
+        }
+
+        .people {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1.5fr;
+        grid-template-areas:
+        "people_1 people_2 people_3";
+        }
+
+        .us {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1.5fr;
+        grid-template-areas:
+        "us_1 us_2 us_3";
+        }
+
+        .saving {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1.5fr;
+        grid-template-areas:
+        "saving_1 saving_2";
+        }
+
+        .stock {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1.5fr;
+        grid-template-areas:
+        "stock_1 stock_2";
+        }
+
+        .bar {
+        display: grid;
+        text-align: center;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+        grid-template-areas:
+        "bar_1 bar_2 bar_3 bar_4";
+        }
+
+    .card {
+    background: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "card1"
+    "spent";
+    }
+
+        
+        .card1 {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1.5fr;
+        grid-template-areas:
+        "card1_1 card1_2 card1_3";
+        }
+
+        .spent {
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+        grid-template-areas:
+        "spent_1 spent_2";
+        }
+
+    .footer {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "home good shop stock menu"
+    }
